@@ -12,7 +12,12 @@ public class isPrime {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number.");
 		int x = sc.nextInt();
+		if (x == 0 || x == 1){
+			System.out.println("false");
+		}
+		else {
 		System.out.println(primeNum(x));
+		}
 
 	}
 
