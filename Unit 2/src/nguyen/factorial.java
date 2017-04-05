@@ -7,13 +7,29 @@ import java.util.Scanner;
  * @author Elizabeth Nguyen
  */
 public class factorial {
+	
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number and you'll get a factorial of it.");
-		int num = sc.nextInt();
+		int num = getInt();
 		System.out.println("The factorial is " + factorial(num) + ".");
 		
+	}
+	
+	/**
+	 * obtains the number inputted by the user and gets the factorial of it
+	 * @param int a is the input number
+	 * @return the factorial of the given number
+	 */
+	public static int getInt(){	
+		do {
+			try {
+				return Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a valid number with no decimals.");
+			}
+		} while (true);
 	}
 	
 	/**

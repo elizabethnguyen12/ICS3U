@@ -7,13 +7,24 @@ import java.util.Scanner;
  * @author Elizabeth Nguyen
  */
 public class sumDigits {
+	
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number and you'll get a sum of the digits, don't include decimals.");
-		int num = sc.nextInt();
+		int num = getInt();
 		System.out.println("The sum of digits is " + sumDigits(num) + ".");
 		
+	}
+	
+	public static int getInt(){	
+		do {
+			try {
+				return Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a valid number with no decimals.");
+			}
+		} while (true);
 	}
 	
 	/**

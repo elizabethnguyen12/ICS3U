@@ -7,12 +7,13 @@ import java.util.Scanner;
  * @author Elizabeth Nguyen
  */
 public class isPrime {
+	
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter a number.");
-		int x = sc.nextInt();
-		if (x == 0 || x == 1){
+		System.out.println("Enter a number and see if it's a prime number or not.");
+		int x = getInt();
+		if (x <= 0 || x == 1){
 			System.out.println("false");
 		}
 		else {
@@ -21,6 +22,16 @@ public class isPrime {
 
 	}
 
+	public static int getInt(){	
+		do {
+			try {
+				return Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a valid number with no decimals.");
+			}
+		} while (true);
+	}
+	
 	/**
 	 * sees if two numbers are divisible with no remainder. If there's no remainder then it'll return false
 	 * @param int x is the input number

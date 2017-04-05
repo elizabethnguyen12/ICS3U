@@ -8,15 +8,33 @@ import java.util.Scanner;
  */
 public class gcf {
 
+	public static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter a number.");
-		int x = sc.nextInt();
-		System.out.println("Enter another number.");
-		int y = sc.nextInt();
-		System.out.println("The greatest common factor is " + gcf(x, y) + ".");
 		
+		int x, y;
+		
+		System.out.println("Find the greatest common factor of two numbers. Enter your first number.");
+		x = getInt();
+		
+		System.out.println("Enter another number.");
+		y = getInt();
+		
+		System.out.println("The greatest common factor is " + gcf(x, y));
 	}
+	
+	
+	public static int getInt(){	
+		do {
+			try {
+				return Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a valid number with no decimals.");
+			}
+		} while (true);
+	}
+	
+	
 	
 	/**
 	 * finds the biggest and smallest number first, then divides both numbers by the smallest number. If neither equal 0, the divisor is decreased by one and the process repeats.
@@ -38,7 +56,7 @@ public class gcf {
 	 * @param int a, int b are input numbers
 	 * @return true or false
 	 */
-private static boolean isDivisible(int a, int b) {
+public static boolean isDivisible(int a, int b) {
 	if (a%b == 0) {
 		return true;
 	}
