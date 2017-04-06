@@ -17,6 +17,12 @@ public class sumDigits {
 		
 	}
 	
+	/**
+	 * tells the user they entered something besides an int and tells them to enter again
+	 * @param "" is the input
+	 * @return statement saying to enter a valid number
+	 */
+	
 	public static int getInt(){	
 		do {
 			try {

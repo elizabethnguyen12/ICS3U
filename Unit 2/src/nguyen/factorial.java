@@ -18,10 +18,11 @@ public class factorial {
 	}
 	
 	/**
-	 * obtains the number inputted by the user and gets the factorial of it
-	 * @param int a is the input number
-	 * @return the factorial of the given number
+	 * tells the user they entered something besides an int and tells them to enter again
+	 * @param "" is the input
+	 * @return statement saying to enter a valid number
 	 */
+	
 	public static int getInt(){	
 		do {
 			try {
