@@ -21,8 +21,9 @@ public class NXTTachometer {
 		}
 		System.out.println(Motor.B.getTachoCount());
 		Motor.B.stop();
+		Button.waitForAnyPress();
 		System.out.println(Motor.B.getTachoCount());
-		Delay.msDelay(5000);
+		
 	}
 
 }
