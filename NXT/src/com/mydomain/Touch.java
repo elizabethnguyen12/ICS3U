@@ -3,31 +3,27 @@ package com.mydomain;
 import lejos.nxt.Button;
 import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
-import lejos.nxt.SoundSensor;
-import lejos.util.Delay;
+import lejos.nxt.TouchSensor;
 
-public class Sound {
+public class Touch {
 
 	public static void main(String[] args) {
-		SoundSensor sound = new SoundSensor (SensorPort.S2, true);
+		TouchSensor touch = new TouchSensor(SensorPort.S1);
+
 		Button.waitForAnyPress();
-		sound.setDBA(true);
+		Motor.B.setSpeed(200);
+		Motor.C.setSpeed(200);
 		Motor.B.forward();
 		Motor.C.forward();
 
 		while (Motor.B.isMoving()){
-			while (sound.readValue() >= 10) {
+			if (touch.isPressed()) {
+				Motor.B.stop();
+				Motor.C.stop();
 				Motor.B.rotate(360);
 			}
 
-
-			Motor.B.forward();
-			Motor.C.forward();
-
-
-
 		}
 		Button.waitForAnyPress();
-
 	}
 }
